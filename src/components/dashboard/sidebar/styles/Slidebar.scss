@@ -1,0 +1,369 @@
+@use "../../../../sass/abstract/" as *;
+
+.main-slidebar {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    // margin-bottom: 3rem;
+    // border: 2px solid red;
+    @include xlBreakPoint {
+        width: 100%;
+        height: auto;
+    }
+    @include xsBreakPoint {
+        width: 100%;
+        height: auto;
+    }
+    .inside-slide {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .bottom-slide {
+            width: 100%;
+            height: 100%;
+            // border: 2px solid green;
+            display: flex;
+            gap: 17px;
+            overflow: hidden;
+            @include xlBreakPoint {
+                display: flex;
+            }
+            .slidebar {
+                height: 100%;
+
+                .bars {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-bottom: 30px;
+                    padding-top: 20px;
+                    .kalai {
+                        color: white;
+                        font-size: 17px;
+                        font-weight: 700;
+                    }
+                    .kalai-image {
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                    }
+                }
+                .followers {
+                    display: flex;
+                    gap: 25px;
+                    .first-follow {
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        width: 40%;
+                        text-align: center;
+                    }
+                    .second-follow {
+                        // padding-left: 5px;
+                        text-align: center;
+                        padding-right: 10px;
+                        width: 40%;
+                    }
+                    .flo {
+                        font-size: 16px;
+                        color: white;
+                    }
+                    .count {
+                        font-size: 1.6rem;
+                        color: orangered;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .slides {
+                background-color: rgb(0, 7, 61);
+
+                .fa-solid {
+                    color: orangered;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+                .moons {
+                    color: white;
+                }
+                .moonss {
+                    color: orange;
+                }
+            }
+            .flexs {
+                display: flex;
+                flex-direction: column;
+                gap: 35px;
+                padding-top: 20px;
+                // padding: 5px 10px;
+                .navs {
+                    display: flex;
+                    // gap: 20px;
+
+                    .links {
+                        color: white;
+                        text-decoration: none;
+                        display: flex;
+                        gap: 10px;
+                    }
+                    .links:hover {
+                        background-color: rgb(45, 51, 89);
+                        border-right: 4px solid white;
+                        transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+                        width: 100%;
+                        // padding: 10px;
+                    }
+                }
+            }
+            .active {
+                border-right: 4px solid red;
+                width: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: rgb(45, 51, 89);
+            }
+            .dark-section {
+                // padding-top: 40px;
+                padding-left: 10px;
+                .App {
+                    display: flex;
+                    // justify-content: center;
+                    // align-items: center;
+                    height: 100%;
+                    transition: 0.3s;
+                }
+                .light {
+                    color: white;
+                    font-size: 12px;
+                    font-weight: 700;
+                }
+                .lights {
+                    color: white;
+                    display: none;
+                    font-size: 11px;
+                    font-weight: 700;
+                }
+                .dark {
+                    color: orange;
+                    font-size: 12px;
+                    font-weight: 700;
+                }
+                .darks {
+                    color: orange;
+                    font-size: 11px;
+                    font-weight: 700;
+                    display: none;
+                }
+
+                .App--Day {
+                    // background: var(--color-bg-day);
+                }
+
+                .App--Night {
+                    background: red;
+                }
+
+                .Switch {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .Switch:hover {
+                    cursor: pointer;
+                }
+
+                .Switch__CheckBox {
+                    opacity: 0;
+                    width: 0px;
+                    height: 0px;
+                }
+
+                .Switch__Slider {
+                    width: 4rem;
+                    height: 2.3rem;
+                    border-radius: 1rem;
+                    margin: 0 0.5rem;
+                    padding: 0.2rem;
+                    display: flex;
+                    align-items: center;
+                    background: orange;
+                    transition: 0.3s;
+                }
+
+                input:checked ~ .Switch__Slider {
+                    background: cyan;
+                    transition: 0.3s;
+                }
+
+                .Switch__SliderDot {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    border-radius: 50%;
+                }
+
+                .Switch__SliderDot {
+                    background-color: orange; /* fallback color */
+                    background: url(https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+                    background-size: 230%;
+                    background-position: center;
+                    transition: 0.3s;
+                    will-change: transform;
+                    box-shadow: 0 0.4rem 1rem 0 var(--color-slider-dot-day-shadow);
+                }
+
+                input:checked ~ .Switch__Slider .Switch__SliderDot {
+                    background-color: red; /* fallback color */
+                    background: url(https://media.istockphoto.com/photos/full-moon-close-up-picture-id490137064?b=1&k=20&m=490137064&s=170667a&w=0&h=I6OMlQb6RNExRjN75j-m755SGLnpjWpAKXxc6oRAN14=);
+                    background-size: 250%;
+                    background-position: center;
+                    transform: translateX(115%) rotate(0.5turn);
+                    transition: 0.3s;
+                    box-shadow: 0 -0.4rem 1rem 0 var(--color-slider-dot-night-shadow);
+                }
+
+                .Switch__Label {
+                    font-size: 0.8rem;
+                    transform: scaleY(0.7);
+                }
+
+                .Switch__Label--Day {
+                    color: var(--color-label-day-day);
+                }
+
+                .Switch__Label--Night {
+                    color: var(--color-label-night-day);
+                }
+
+                input:checked ~ .Switch__Label--Day {
+                    color: var(--color-label-day-night);
+                }
+
+                input:checked ~ .Switch__Label--Night {
+                    color: var(--color-label-night-night);
+                    text-shadow: 0 0 1rem var(--color-label-night-night);
+                }
+
+                .wiggle {
+                    animation: wiggle 0.5s linear;
+                }
+
+                @keyframes wiggle {
+                    0% {
+                        transform: none;
+                    }
+                    25% {
+                        transform: translateX(0.05rem);
+                    }
+                    50% {
+                        transform: translateX(-0.05rem);
+                    }
+                    75% {
+                        transform: translateX(0.025rem);
+                    }
+                    100% {
+                        transform: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-sidebar-nav {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    .mobile-inside-section {
+        width: 100%;
+        height: 100%;
+
+        .sidebar-mobile {
+            width: 100%;
+            height: 90%;
+            z-index: -10 !important;
+            @include xsBreakPoint {
+                overflow-y: auto;
+                height: 90% !important;
+            }
+            @include smBreakPoint {
+                overflow-y: auto;
+                height: 90% !important;
+            }
+            @include mdBreakPoint {
+                overflow-y: auto;
+                height: 90% !important;
+            }
+        }
+        .side-bottom-section {
+            position: absolute;
+            width: 100%;
+            background-color: rgb(0, 7, 61);
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            z-index: 24599999900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+            @include xsBreakPoint {
+                // height: 40%;
+                height: 10%;
+                // border: 3px solid green;
+            }
+            @include smBreakPoint {
+                // height: 40%;
+                height: 10%;
+                // border: 3px solid green;
+            }
+            @include mdBreakPoint {
+                height: 10%;
+            }
+            .inside-phone {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-around;
+
+                .icons-section {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .kalai-circle {
+                    width: 58px;
+                    height: 58px;
+                    border-radius: 50%;
+                    border: 2px solid green;
+                }
+            }
+        }
+    }
+}
+
+.mobile-bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+
+    &__item--active {
+        //dev
+        color: red;
+        cursor: pointer;
+    }
+    .mobile-bottom-nav__item-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    .kalai-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid orange;
+    }
+}
