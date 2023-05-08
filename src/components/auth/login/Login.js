@@ -16,7 +16,6 @@ function Login() {
         handleSubmit,
         formState: { errors },
     } = useForm();
-
     const [show, setShow] = useState("");
     const histroy = useNavigate();
     const dispatch = useDispatch();
@@ -30,13 +29,21 @@ function Login() {
         dispatch(LoginAction(datas, toast, histroy));
     }
     const token = localStorage.getItem("accesstoken");
+
+    const Forgetpassword = () => {
+        histroy("/forgetpassword")
+    }
     if (token) {
-        return <Navigate to="/dashboard" />
+        return <Navigate to="/portfolio/dashboard" />
     }
     else {
         return (
             <div className='loginmain'>
                 <div className='inside-login'>
+                    <div className='circle2'>
+
+                    </div>
+
                     <div className='left-images'>
                         <div>
                             <img src={circle} alt="no image" className='circle' />
@@ -85,7 +92,9 @@ function Login() {
                                     {errors.password && <span>password is required</span>}
                                 </Form.Text>
                             </Form.Group>
-                            <div className='text-end text-danger'>
+                            <div className='text-end text-danger' onClick={Forgetpassword} style={{
+                                cursor: "pointer"
+                            }}>
                                 Forget password
                             </div>
                             <button className='loginbutton mt-4'>
@@ -95,6 +104,8 @@ function Login() {
                     </div>
                     <div className='right-content'>
                         <img src={login} alt="no image" />
+                        <div className='circle3'>
+                        </div>
                     </div>
                 </div>
             </div>

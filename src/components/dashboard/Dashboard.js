@@ -5,13 +5,7 @@ import Sidebar from './sidebar/Sidebar'
 function Dashboard() {
     return (
         <div>
-            <div>
-                <Sidebar/>
-            </div>
-
-            <div>
-                <Outlet />
-            </div>
+        welcome
         </div>
     )
 }

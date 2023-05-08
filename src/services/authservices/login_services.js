@@ -19,3 +19,13 @@ export function UserSignup(data) {
         })
     })
 }
+
+export function Forgetpassworduser(data) {
+    return new Promise((reslove, reject) => {
+        axiosConfig.post(`/auth/forgetpassword`, data).then((res) => {
+            reslove(res?.data);
+        }).catch((err) => {
+            reject(err);
+        })
+    })
+}
