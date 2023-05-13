@@ -26,6 +26,7 @@ function Login() {
             email: data?.email,
             password: data?.password
         }
+
         dispatch(LoginAction(datas, toast, histroy));
     }
     const token = localStorage.getItem("accesstoken");
@@ -41,9 +42,7 @@ function Login() {
             <div className='loginmain'>
                 <div className='inside-login'>
                     <div className='circle2'>
-
                     </div>
-
                     <div className='left-images'>
                         <div>
                             <img src={circle} alt="no image" className='circle' />

@@ -9,14 +9,13 @@ axios.interceptors.request.use(
             config.url = process.env.REACT_APP_API_URL + config.url;
             return config;
         }
-
         else {
             const token = localStorage.getItem("accesstoken");
             config.url = process.env.REACT_APP_API_URL + config.url;
             config.headers = {
                 ...config.headers,
                 "Content-Type": "application/json",
-                Authorization: `${token}`
+                Authorization: `${JSON.parse(token)}`
             };
             config.withCredentials = true;
             return config;

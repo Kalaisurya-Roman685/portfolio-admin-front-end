@@ -14,7 +14,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
     <ToastContainer></ToastContainer>
-
     <BrowserRouter>
       <Provider store={store}>
         <App />

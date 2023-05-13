@@ -1,0 +1,52 @@
+@use "../../../sass/abstract/" as *;
+
+.mainprofilesection {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    .insideprofile {
+        width: 100%;
+        height: 100%;
+        .imageprofiel {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 15px;
+        }
+        .cardsectionprofile {
+            width: 80%;
+            // border: 3px solid red;
+            margin: 3% auto;
+            height: 85%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            background: white;
+            border-radius: 20px;
+            .imageround {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                // border: 3px solid red;
+            }
+        }
+        .upload {
+            width: 100%;
+            outline: none;
+            border: none;
+            padding: 10px 40px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            border-radius: 5px;
+            background-color: $back_export_color-white;
+        }
+        .formsection
+        {
+            display: flex;
+            gap:40px;
+            align-items: center;
+            justify-content: center;
+        }
+       
+    }
+}

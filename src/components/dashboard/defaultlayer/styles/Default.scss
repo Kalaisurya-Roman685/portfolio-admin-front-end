@@ -1,9 +1,14 @@
 @use "../../../../sass/abstract/" as *;
 
-.main-content {
+.maincontent {
     width: 100%;
     height: 100vh;
     overflow: hidden;
     display: flex;
     background-color: #f3f3ff;
+    .mainsectionbars
+    {
+        width: 100%;
+        height: 100%;
+    }
 }

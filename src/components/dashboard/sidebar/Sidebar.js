@@ -26,7 +26,7 @@ function SlideBar({ children, }) {
             icons: <i class="fa-solid fa-address-card"></i>
         },
         {
-            name: "/skills",
+            name: "/portfolio/skills",
             names: "Skills",
             icons: <i class="fa-solid fa-graduation-cap"></i>
         },
@@ -64,7 +64,7 @@ function SlideBar({ children, }) {
         toast.success("Logout User Successfully...");
     }
     return (
-        <motion.div className='main-slidebar'>
+        <motion.div  className='main-slidebar'>
             <motion.div className='inside-slide'>
                 <motion.div className='bottom-slide'>
                     <motion.div className='slides d-none d-lg-block'>
@@ -76,8 +76,17 @@ function SlideBar({ children, }) {
                                 </motion.div>}
                                 <span onClick={tests}><i class="fa-solid fa-bars"></i></span>
                             </motion.div>
-                            <div onClick={profiles}>
-                                profile
+                            <div onClick={profiles} className="mb-3 profilesections">
+                                {toggles?<>
+                                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="no image"
+                                    className="profileimage"
+                                />
+                                </>:<>
+                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="no image"
+                                    className="profileimage1"
+                                />
+                                </>}
+                               
                             </div>
                             {toggles && <motion.div className='followers'>
                                 <motion.div className='first-follow'>
@@ -113,7 +122,7 @@ function SlideBar({ children, }) {
                                 </motion.div>
 
                                 <motion.div>
-                                    <motion.div className='mt-5 d-flex'>
+                                    <motion.div className='mt-4 d-flex'>
                                         <div className='d-flex gap-3 align-items-center' onClick={LogoutUser} >
                                             <i class="fa-solid fa-right-from-bracket"></i>
                                             <div onClick={LogoutUser} style={{

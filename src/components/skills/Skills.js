@@ -4,10 +4,10 @@ import { ProjectGetAllData, ProjectDeletes } from '../../Redux/actions/projectac
 import './styles/Project.scss';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-function Projectjs() {
+function Skills() {
   const [Projectjs, setProjects] = useState([]);
   const dispatch = useDispatch();
-  const state = useSelector((state) => state?.projects?.projects?.data)
+  const state = useSelector((state) => state?.skill?.skills?.data)
   console.log(state, "state");
   useEffect(() => {
     dispatch(ProjectGetAllData());
@@ -23,13 +23,13 @@ function Projectjs() {
   const EditProject = (id) => {
     history(`/portfolio/project/create/${id}`)
 
-   
+
   }
   return (
     <div className='mainprojects'>
       <div className='insideprojectjs'>
         <div className='buttonsections mb-3'>
-          <button className='createprjects' onClick={() => history('/portfolio/project/create')}>+ Create Projects</button>
+          <button className='createprjects' onClick={() => history('/portfolio/skills/create')}>+ Create Skills</button>
 
         </div>
         <div className='row  projectbox'>
@@ -77,4 +77,4 @@ function Projectjs() {
   )
 }
 
-export default Projectjs
+export default Skills;

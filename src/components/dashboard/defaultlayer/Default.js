@@ -135,21 +135,14 @@ const Default = memo((props) => {
     if (token) {
         return (
             <Fragment >
-
-
-
-                <main className="main-content">
-                    <div className={`position-relative `}>
+                <main className="maincontent">
+                    <div className="">
                         <SlideBar />
-
                     </div>
-                    <div className={`content-inner pb-0`}>
+                    <div className='mainsectionbars'>
                         <Outlet />
                     </div>
-
                 </main>
-
-
             </Fragment>
         )
     } else if (token) {

@@ -1,0 +1,55 @@
+@use "../../../sass/abstract/" as *;
+
+.mainprojects {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    .insideprojectjs {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y:auto;
+        padding-bottom: 5%;
+        .buttonsections {
+            width: 100%;
+            float: right;
+            padding-right: 3%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .createprjects {
+            width: 15%;
+            border: none;
+            outline: none;
+            padding: 10px 40px;
+            margin-top: 2%;
+            border-radius: 10px;
+        }
+
+        .imageround {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        .projectbox
+        {
+            display: flex;
+            gap:30px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cardprojects {
+            width: 30%;
+            // border: 2px solid red;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+            display: flex;
+            // flex-direction: column;
+            gap: 30px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+    }
+}

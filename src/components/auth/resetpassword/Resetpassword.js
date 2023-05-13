@@ -7,11 +7,16 @@ import circle from '../../../assets/login/circle1.png';
 import circle1 from '../../../assets/login/circle2.png';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { LoginAction } from '../../../Redux/actions/authactions/Loginactions';
+import { LoginAction, ResetPasswordActions } from '../../../Redux/actions/authactions/Loginactions';
 import { toast } from 'react-toastify';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 
 function Resetpassword() {
+
+    const token = window.location.pathname;
+
+
+    console.log(token.slice(16, 210), "kalai")
 
     const {
         register,
@@ -23,11 +28,12 @@ function Resetpassword() {
     const dispatch = useDispatch();
     const SubmitForm = (data) => {
         const datas = {
-            email: data?.email,
             password: data?.password
         }
 
-        dispatch(LoginAction(datas, toast, histroy));
+        console.log(datas, "thala")
+
+        dispatch(ResetPasswordActions(token.slice(16, 200), datas, toast, histroy));
     }
     return (
         <div className='loginmain'>
@@ -74,7 +80,7 @@ function Resetpassword() {
                                 {errors.Password && <span>Password is required</span>}
                             </Form.Text>
                         </Form.Group>
-                        <Form.Group className="mb-3 col-lg-12" controlId="formBasicPassword">
+                        {/* <Form.Group className="mb-3 col-lg-12" controlId="formBasicPassword">
                             <Form.Label>Confirm Password</Form.Label>
                             <div className="passwordform">
 
@@ -99,7 +105,7 @@ function Resetpassword() {
                             <Form.Text className="text-danger mt-3">
                                 {errors.password && <span>Password is required</span>}
                             </Form.Text>
-                        </Form.Group>
+                        </Form.Group> */}
                         <button className='loginbutton mt-4'>
                             Reset Password
                         </button>

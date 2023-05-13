@@ -29,3 +29,13 @@ export function Forgetpassworduser(data) {
         })
     })
 }
+
+export function ChnageForgetpassword(token, data) {
+    return new Promise((reslove, reject) => {
+        axiosConfig.post(`/auth/reset-password/${token}`, data).then((res) => {
+            reslove(res?.data);
+        }).catch((err) => {
+            reject(err);
+        })
+    })
+}

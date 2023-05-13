@@ -10,6 +10,9 @@ import Projectjs from './components/projects/Projectjs';
 import Profile from './components/profile/Profile';
 import Resetpassword from './components/auth/resetpassword/Resetpassword';
 import Forgetpassword from './components/auth/resetpassword/forgetpassword/Forgetpassword';
+import Createproject from './components/projects/create/Createproject';
+import Skills from './components/skills/Skills';
+import Createskills from './components/skills/create/Createskills';
 function App() {
   return (
     <div className="App ">
@@ -23,6 +26,11 @@ function App() {
             <Route path="dashboard" element={<Dashboard />}></Route>
             <Route path="projects" element={<Projectjs />}></Route>
             <Route path="profile" element={<Profile />}></Route>
+            <Route path="project/create" element={<Createproject />}></Route>
+            <Route path="project/create/:id" element={<Createproject />}></Route>
+            <Route path="skills" element={<Skills />}></Route>
+            <Route path="skills/create" element={<Createskills />}></Route>
+            <Route path="skills/create/:id" element={<Createproject />}></Route>
           </Route>
         </Route>
       </Routes>

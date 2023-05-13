@@ -306,7 +306,7 @@
             display: flex;
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
-            z-index: 24599999900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+            z-index: 24599;
             @include xsBreakPoint {
                 // height: 40%;
                 height: 10%;
@@ -366,4 +366,26 @@
         border-radius: 50%;
         border: 3px solid orange;
     }
+}
+
+.profilesections {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileimage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profileimage1 {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
 }
